@@ -33,7 +33,11 @@ const AddTodo:React.FC<Props> = ({todoArr, setTodoArr}) => {
     return (
 
         <div style = {styles.container}>
-            <input value={editText} onChange={event => onTextChange(event.target.value)} style={styles.input} type="text" placeholder="add to do list"/>
+            <input value={editText} 
+            onChange={event => onTextChange(event.target.value)} 
+            style={styles.input} 
+            type="text" 
+            placeholder="add list"/>
             <button onClick={onClick}style={styles.addButton}>+</button>
          </div>
     );

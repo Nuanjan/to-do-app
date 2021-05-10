@@ -32,7 +32,6 @@ const TodoList = () => {
     // update data from the child component(input)
     // get new data from input and still save old data
     // copy old data and add new data
-    //const [textArr,setTextArr] = useState([]);
     const [todoArr, setTodoArr] = useState<TodoType[]>([]);
     return (
         <div style={styles.container}>
