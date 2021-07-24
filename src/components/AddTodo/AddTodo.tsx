@@ -17,10 +17,9 @@ const AddTodo:React.FC<Props> = ({todoArr, setTodoArr}) => {
     const [editText, setEditText] = useState<string>("")
 
     const onTextChange = (text:string) => {
-        console.log(text, ' this is new text')
         setEditText(text)
     }
-    const onClick =() => {
+    const onSubmitTodoTextClick =() => {
        setTodoArr([...todoArr,{
            id: nanoid(),
            text: editText,
@@ -30,15 +29,23 @@ const AddTodo:React.FC<Props> = ({todoArr, setTodoArr}) => {
        setEditText('');
     }
 
+    const onSubmitText = (e: any) => {
+        if(e.code === 'Enter'){
+            e.preventDefault();
+            e.stopPropagation();
+            onSubmitTodoTextClick()
+        }
+    }
     return (
 
         <div style = {styles.container}>
             <input value={editText} 
             onChange={event => onTextChange(event.target.value)} 
+            onKeyDown={(e) => onSubmitText(e)}
             style={styles.input} 
             type="text" 
             placeholder="add list"/>
-            <button onClick={onClick}style={styles.addButton}>+</button>
+            <button onClick={onSubmitTodoTextClick}style={styles.addButton}>+</button>
          </div>
     );
 };
@@ -49,12 +56,11 @@ const styles:{
 
 } = {
     container: {
-        backgroundColor: '#af60fe',
+        backgroundColor: '#e75480',
         borderRadius: '10px',
         position:'absolute',
         bottom: '-30px',
         padding: '10px',
-        width: '50%',
         textAlign: 'center',
         display:'flex'
        

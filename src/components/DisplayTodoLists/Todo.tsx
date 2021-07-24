@@ -1,28 +1,59 @@
-import React, {Dispatch, SetStateAction} from 'react';
+import React, {Dispatch, SetStateAction, useState} from 'react';
 import { BsTrash } from 'react-icons/bs';
-import Css from 'csstype';
 import {TodoType} from '../TodoList/TodoList';
+import {FiEdit} from 'react-icons/fi';
 
 interface Props {
     text: string;
     id: string;
     todoArr: TodoType[];
+    isComplete: boolean;
     setTodoArr: Dispatch<SetStateAction<TodoType[]>>;
 }
 
-const Todo: React.FC<Props> = ({text, id, todoArr, setTodoArr}) => {
-    // const [newArray, setNewArray] = useState([])
-    
+const Todo: React.FC<Props> = ({text, id,isComplete, todoArr, setTodoArr}) => {
+    const [isOnEdit, setIsOnEdit] = useState(false);
+    const [editText, setEditText] = useState(text);
+    const [isCrossTextClass, setIsCrossTextClass] = useState(false);
     const onClickTrash =()=> {
      const newArray = todoArr.filter(text => text.id !== id)
       setTodoArr(newArray);
     }
+    const onClickEdit = () => {
+        setIsOnEdit(true);
+    }
+
+    const onSubmitText = (e: any) => {
+        console.log(e.code)
+        if(e.code === 'Enter'){
+            setIsOnEdit(false);
+        }
+    }
+
+    const onEditTextChange = (changeText: string)=> {
+        setEditText(changeText);
+    }
+
+    const onCheckIsComplete = (e: any) => {
+        if(e.target.checked)
+            setIsCrossTextClass(true);
+            else
+            setIsCrossTextClass(false);
+
+    }
     return (
         <div style={styles.container}>
-            <input style={styles.checkbox} type="checkbox"/>
+            <input style={styles.checkbox} type="checkbox" onClick={(e) => onCheckIsComplete(e)}/>
             <div style={styles.textWrap}>
-            <p>{text}</p>
+                {isOnEdit?
+                <input
+                type="text"
+                value={editText}
+                onChange={event => onEditTextChange(event.target.value)}
+                onKeyDown={(e) => onSubmitText(e)}
+                />:<p style={{textDecoration:isCrossTextClass?"line-through":"none"}}>{editText}</p>}
             </div>
+            <FiEdit style={{marginRight:"15px"}} onClick={onClickEdit}/>
             <BsTrash onClick={onClickTrash}/>
         </div>
     );
@@ -33,15 +64,19 @@ const styles = {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
+       borderBottom: 'solid #a5d8f3 2px',
         fontSize: '24px',
-        color: '#848484',      
+        color: '#043927',      
     },
     checkbox: {
        
     },
     textWrap: {
         width: '100%',
-        paddingLeft:"20px"
+        paddingLeft:"20px",
+    },
+    crossText:{
+        textDecoration: "line-through"
     }
 }
 export default Todo;

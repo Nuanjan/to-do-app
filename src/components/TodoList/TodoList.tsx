@@ -7,16 +7,17 @@ const styles:{
     container: CSS.Properties;
 } = {
     container: {
-        backgroundColor: "#fffff2",
+        backgroundColor: "#d0f0c0",
         display: "flex",
         flexDirection: 'column',
         justifyContent: "flex-start",
-        width: '45%',
-        height: '40%',
+        minWidth: '300px',
+        minHeight: '400px',
         position: 'relative',
         alignItems: 'center',
         padding: '20px',
-        border: 'solid #be93d4 2px'
+        border: 'solid #ff9de6 2px',
+        borderRadius: '20px'
 
     }
 }
@@ -33,6 +34,7 @@ const TodoList = () => {
     // get new data from input and still save old data
     // copy old data and add new data
     const [todoArr, setTodoArr] = useState<TodoType[]>([]);
+    
     return (
         <div style={styles.container}>
             

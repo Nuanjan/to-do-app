@@ -6,7 +6,9 @@ import {TodoType} from '../TodoList/TodoList';
 interface Props{
     todoArr:TodoType[];
     setTodoArr: Dispatch<SetStateAction<TodoType[]>>;
+    
 }
+
 
 const DisplayTodoLists:React.FC<Props> = ({todoArr, setTodoArr}) => {
     return (
@@ -16,6 +18,7 @@ const DisplayTodoLists:React.FC<Props> = ({todoArr, setTodoArr}) => {
                 <Todo
                 key={index}
                 text={todo.text}
+                isComplete={todo.isComplete}
                 id={todo.id}
                 todoArr={todoArr}
                 setTodoArr={setTodoArr}

@@ -4,36 +4,37 @@
   align-items: center;
   height: 100vh;
   justify-content: center;
-  max-width: 900px;
+  background-image: url(./image/flora.jpg);
+  background-position: auto;
+  background-repeat: no-repeat;
 }
 .check-container {
   display: block;
   position: relative;
   cursor: pointer;
   font-size: 22px;
-  
 }
- .check-container input {
+.check-container input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
   height: 0;
   width: 0;
- }
- .checkmark {
+}
+.checkmark {
   height: 10px;
   width: 10px;
   border: #848484 solid 5px;
   border-radius: 50%;
- }
- /* On mouse-over, add a grey background color */
+}
+/* On mouse-over, add a grey background color */
 .check-container:hover input ~ .checkmark {
   background-color: #949494;
 }
 
 /* When the checkbox is checked, add a  background */
 .check-container input:checked ~ .checkmark {
-  background-color: #af60fe;
+  background-color: #fdc7d7;
 }
 .checkmark:after {
   content: "";
