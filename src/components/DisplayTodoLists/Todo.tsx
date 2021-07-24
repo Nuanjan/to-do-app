@@ -54,8 +54,8 @@ const Todo: React.FC<Props> = ({text, id,isComplete, todoArr, setTodoArr}) => {
                 onKeyDown={(e) => onSubmitText(e)}
                 />:<p style={{textDecoration:isCrossTextClass?"line-through":"none"}}>{editText}</p>}
             </div>
-            <FiEdit style={{marginRight:"15px"}} onClick={onClickEdit}/>
-            <BsTrash onClick={onClickTrash}/>
+            <FiEdit style={styles.iconStyle} onClick={onClickEdit}/>
+            <BsTrash style={styles.iconStyle} onClick={onClickTrash}/>
         </div>
     );
 };
@@ -82,6 +82,10 @@ const styles = {
         backgroundColor:"#feff9e",
         borderRadius: "4px",
         boxShadow: "10px 0px 20px white"
+    },
+    iconStyle: {
+        cursor:'pointer',
+        marginLeft:"15px"
     }
 
 }
