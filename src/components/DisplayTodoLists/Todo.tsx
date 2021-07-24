@@ -48,6 +48,7 @@ const Todo: React.FC<Props> = ({text, id,isComplete, todoArr, setTodoArr}) => {
                 {isOnEdit?
                 <input
                 type="text"
+                style={styles.inputForEdit}
                 value={editText}
                 onChange={event => onEditTextChange(event.target.value)}
                 onKeyDown={(e) => onSubmitText(e)}
@@ -75,8 +76,13 @@ const styles = {
         width: '100%',
         paddingLeft:"20px",
     },
-    crossText:{
-        textDecoration: "line-through"
+    inputForEdit: {
+        width: '90%',
+        border: "2px solid green",
+        backgroundColor:"#feff9e",
+        borderRadius: "4px",
+        boxShadow: "10px 0px 20px white"
     }
+
 }
 export default Todo;

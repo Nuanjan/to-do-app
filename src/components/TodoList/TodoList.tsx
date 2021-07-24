@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import AddTodo from '../AddTodo';
 import DisplayTodoLists from '../DisplayTodoLists';
 import CSS from 'csstype';
+import { nanoid } from 'nanoid';
 
 const styles:{
     container: CSS.Properties;
@@ -13,6 +14,7 @@ const styles:{
         justifyContent: "flex-start",
         minWidth: '300px',
         minHeight: '400px',
+        width:'40%',
         position: 'relative',
         alignItems: 'center',
         padding: '20px',
@@ -27,13 +29,30 @@ export type TodoType = {
     text: string;
     isComplete: boolean;
 };
+const initialToDoList = [
+    {
+        id: nanoid(),
+        text: "To do List 1",
+        isComplete: false
+    },
+    {
+        id: nanoid(),
+        text: "To do List 2",
+        isComplete: false
+    },
+    {
+        id: nanoid(),
+        text: "To do List 3",
+        isComplete: false
+    },
 
+]
 const TodoList = () => {
     // onClick from todoList
     // update data from the child component(input)
     // get new data from input and still save old data
     // copy old data and add new data
-    const [todoArr, setTodoArr] = useState<TodoType[]>([]);
+    const [todoArr, setTodoArr] = useState<TodoType[]>(initialToDoList);
     
     return (
         <div style={styles.container}>
