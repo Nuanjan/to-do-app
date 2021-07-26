@@ -65,7 +65,7 @@ const styles = {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-       borderBottom: 'solid #a5d8f3 2px',
+       borderBottom: 'solid #9ab10a 2px',
         fontSize: '24px',
         color: '#043927',      
     },
@@ -77,6 +77,7 @@ const styles = {
         paddingLeft:"20px",
     },
     inputForEdit: {
+        fontSize:'24px',
         width: '90%',
         border: "2px solid green",
         backgroundColor:"#feff9e",

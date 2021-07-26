@@ -8,7 +8,7 @@ const styles:{
     container: CSS.Properties;
 } = {
     container: {
-        backgroundColor: "#d0f0c0",
+        backgroundColor: "#fafafa",
         display: "flex",
         flexDirection: 'column',
         justifyContent: "flex-start",
@@ -18,7 +18,8 @@ const styles:{
         position: 'relative',
         alignItems: 'center',
         padding: '20px',
-        border: 'solid #ff9de6 2px',
+        border: 'solid #9ab10a 10px',
+        boxShadow: '0 0 10px white',
         borderRadius: '20px'
 
     }

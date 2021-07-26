@@ -5,7 +5,7 @@
   height: 100vh;
   justify-content: center;
   background-image: url(./image/flora.jpg);
-  background-position: auto;
+  background-position: top center;
   background-repeat: no-repeat;
 }
 .check-container {
