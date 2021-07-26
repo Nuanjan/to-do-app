@@ -66,7 +66,7 @@ const styles = {
         alignItems: 'center',
         justifyContent: 'space-between',
        borderBottom: 'solid #9ab10a 2px',
-        fontSize: '24px',
+        fontSize: '1.5rem',
         color: '#043927',      
     },
     checkbox: {
@@ -77,7 +77,7 @@ const styles = {
         paddingLeft:"20px",
     },
     inputForEdit: {
-        fontSize:'24px',
+        fontSize:'1.5rem',
         width: '90%',
         border: "2px solid green",
         backgroundColor:"#feff9e",

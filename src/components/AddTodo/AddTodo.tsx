@@ -44,7 +44,7 @@ const AddTodo:React.FC<Props> = ({todoArr, setTodoArr}) => {
             onKeyDown={(e) => onSubmitText(e)}
             style={styles.input} 
             type="text" 
-            placeholder="Create New To Do Here"/>
+            placeholder="Add To Do Here"/>
             <button onClick={onSubmitTodoTextClick}style={styles.addButton}>+</button>
          </div>
     );
@@ -79,7 +79,7 @@ const styles:{
         height: '50px',
         width: '80%',
         border: 'none',
-        fontSize:'24px',
+        fontSize:'1.5rem',
         color: 'rgb(4, 57, 39)'
     }
 }
